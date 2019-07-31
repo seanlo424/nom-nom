@@ -1,11 +1,13 @@
+<div class="booyah-box col-10 offset-1">
 <h2>Change your password</h2>
-
+<br />
+<p><a href="http://localhost:3030/users/password/edit?reset_password_token=RNVLtV93CsP_YDYfEk48">Change my password</a></p>
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <%= f.input :reset_password_token, as: :hidden %>
   <%= f.full_error :reset_password_token %>
-
+  <br />
   <div class="form-inputs">
     <%= f.input :password,
                 label: "New password",
@@ -13,11 +15,11 @@
                 autofocus: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
+    <%= f.input :password_confirmation, label: "Confirm your new password",required: true %>
   </div>
-
+  <br />
   <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
+    <%= f.button :submit, "Change my password" class: 'btn btn-primary' %>
   </div>
 <% end %>
 
