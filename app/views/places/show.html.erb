@@ -8,16 +8,19 @@
    
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
+        
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
       #map {
         height: 300px;
       }
       /* Optional: Makes the sample page fill the window. */
-
-<% if @place.latitude.present? && @place.longitude.present? %>
       
     
- 
-    <script>
+
+    <% if @place.latitude.present? && @place.longitude.present? %>
+
+     <script>
 
       function initMap() {
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
@@ -35,9 +38,9 @@
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIwjTOJORFgtLPQPW-BvqJMyr1Mo9QHKM&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEYAIzaSyCAkymUQTjp4oYn9LAiji-041v8Zyk9gpI&callback=initMap">
     </script>
-
+ 
     <div id="map"></div>
 <% end %> 
 
