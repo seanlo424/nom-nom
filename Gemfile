@@ -67,7 +67,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'popper_js', '~> 1.11.1'
-gem 'bootstrap', '4.0.0.alpha6'
+gem 'bootstrap', '>= 4.3.1'
 gem 'simple_form'
 gem "font-awesome-rails"
 gem 'devise'
