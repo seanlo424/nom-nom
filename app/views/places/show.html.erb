@@ -5,22 +5,18 @@
   <p><%= @place.description %></p>
 
 
-   
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-        
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 300px;
-      }
-      /* Optional: Makes the sample page fill the window. */
+  <style>
+ 
+    
+
+  </style>
+
       
     
 
-    <% if @place.latitude.present? && @place.longitude.present? %>
+  <% if @place.latitude.present? && @place.longitude.present? %>
 
-     <script>
+  <script>
 
       function initMap() {
         var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
@@ -36,10 +32,11 @@
           title: 'Hello World!'
         });
       }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEYAIzaSyCAkymUQTjp4oYn9LAiji-041v8Zyk9gpI&callback=initMap">
-    </script>
+  </script>
+
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIwjTOJORFgtLPQPW-BvqJMyr1Mo9QHKM&callback=initMap">
+  </script>
  
     <div id="map"></div>
 <% end %> 
@@ -55,5 +52,8 @@
   	 <% end %>
   </div>
 </div>
+
+
+
 
 
