@@ -53,6 +53,15 @@
   </div>
 </div>
 
+
+<div class="clear"></div>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+   <%= f.input :picture %>
+   <%= f.input :caption %>
+   <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+
+<% end %>
+
 <div class="clear"></div>
 <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
   <%= f.input :message %>
@@ -96,13 +105,37 @@
 
 <div class="clear"></div>
 
+<div class="row">
+  <% @place.photos.each do |photo| %>
+   <div class="col-12 col-sm-4">
+    <blockquote>
+      <b><%= photo.caption %></b> -
+      <%= image_tag photo.picture.url %>
+    </blockquote>
+   </div>
+  <% end %>
+</div>
+
 
  
 <div class="row">
  <% @place.comments.each do |comment| %>
+  <div class="col-12 col-sm-6">
+    <blockquote>
+      <% if comment.humanized_rating.present? %>
+        <b><%= comment.humanized_rating %></b> -
+      <% end %>
+      <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
  <% end %>
 </div>
 
+
+
+
+ 
 
 
 
